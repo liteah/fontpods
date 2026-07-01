@@ -5,6 +5,7 @@ export const useSettingsStore = defineStore('settings', () => {
 
 	const state = reactive({
 		locale: $i18n.locale.value as AvailableLocales,
+		colorMode: 'system' as 'light' | 'dark' | 'system',
 	})
 
 	watch(

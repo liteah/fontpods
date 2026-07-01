@@ -6,18 +6,21 @@ export const locales: LocaleObject[] = [
 		file: 'en.json',
 		language: 'en',
 		name: 'English',
+		key: 'english',
 	},
 	{
 		code: 'zh-CN',
 		file: 'zh-cn.json',
 		language: 'zh-Hans-CN',
 		name: '简体中文',
+		key: 'simplified-chinese',
 	},
 	{
 		code: 'zh-TW',
 		file: 'zh-tw.json',
 		language: 'zh-Hant-TW',
 		name: '繁體中文',
+		key: 'traditional-chinese',
 	},
 ]
 

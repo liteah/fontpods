@@ -18,7 +18,7 @@ const lanes = computed(() =>
 	Math.min(4, Math.max(1, Math.floor((width.value - gap) / (minItemWidth + gap)))),
 )
 
-const isRow = computed(() => fontListStore.layout === 'row')
+const isRow = computed(() => fontListStore.state.layout === 'row')
 
 // Virtualize per row; each row is one virtual item carrying its slice of fonts
 const rows = computed(() => {
@@ -34,7 +34,7 @@ const rows = computed(() => {
 const virtualize = computed(() => ({
 	gap,
 	lanes: 1,
-	estimateSize: fontListStore.fontSize * 4 + 36,
+	estimateSize: fontListStore.state.fontSize * 4 + 36,
 }))
 
 const gridStyle = computed(() => ({

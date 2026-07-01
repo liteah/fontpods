@@ -20,6 +20,18 @@ export default defineAppConfig({
 				root: 'w-full',
 			},
 		},
+		select: {
+			slots: {
+				content: 'min-w-fit',
+				trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200',
+			},
+		},
+		selectMenu: {
+			slots: {
+				content: 'min-w-fit',
+				trailingIcon: 'group-data-[state=open]:rotate-180 transition-transform duration-200',
+			},
+		},
 		input: {
 			slots: {
 				root: 'w-full',
@@ -123,6 +135,9 @@ export default defineAppConfig({
 			text: 'i-ph-text-t',
 			starFill: 'i-ph-star-fill',
 			settings: 'i-ph-gear-fine',
+			globe: 'i-ph-globe-simple',
+			appearance: 'i-ph-palette',
+			colorMode: 'i-ph-circle-half',
 		},
 	},
 })

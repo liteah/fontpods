@@ -1,7 +1,10 @@
 {
+	"common": {
+		"search-placeholder": "Search..."
+	},
 	"header": {
 		"back": "Back",
-		"openAppMenu": "Open App Menu"
+		"open-app-menu": "Open App Menu"
 	},
 	"font": {
 		"count": "{count} / {total} fonts",
@@ -10,7 +13,7 @@
 		"search": "Search fonts…",
 		"add": "Add",
 		"preview": "Preview",
-		"previewPlaceholder": "The quick brown fox jumps over the lazy dog.",
+		"preview-placeholder": "The quick brown fox jumps over the lazy dog.",
 		"fontSize": "Font size",
 		"filter": "Filter",
 		"layout": {
@@ -43,6 +46,25 @@
 		}
 	},
 	"settings": {
-		"label": "Settings"
+		"label": "Settings",
+		"general": {
+			"label": "General",
+			"language": "Language",
+			"search-languages": "Search languages..."
+		},
+		"appearance": {
+			"label": "Appearance",
+			"color-mode": {
+				"label": "Color Mode",
+				"light": "Light",
+				"dark": "Dark",
+				"system": "System"
+			}
+		}
+	},
+	"languages": {
+		"english": "English",
+		"simplified-chinese": "Simplified Chinese",
+		"traditional-chinese": "Traditional Chinese"
 	}
 }

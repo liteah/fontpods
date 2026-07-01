@@ -52,8 +52,12 @@ export default defineNuxtConfig({
 		dirs: ['types'],
 	},
 	icon: {
+		mode: 'svg',
+		// provider: 'none',
 		clientBundle: {
-			scan: true,
+			scan: {
+				globInclude: ['app.config.ts'],
+			},
 		},
 	},
 	ui: {

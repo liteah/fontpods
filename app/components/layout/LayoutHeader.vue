@@ -8,7 +8,7 @@ const dropdownItems = computed<DropdownMenuItem[][]>(() => [
 		{
 			label: $t('settings.label'),
 			icon: appConfig.ui.icons.settings,
-			to: appConfig.routes.settings,
+			to: `${appConfig.routes.settings}/general`,
 		},
 	],
 ])
@@ -48,15 +48,10 @@ async function handleWindowDrag(event: MouseEvent) {
 		<section class="flex h-full items-center gap-2">
 			<div class="flex items-center">
 				<UTooltip v-if="$route.path !== '/'" :text="$t('header.back')">
-					<UButton
-						:icon="appConfig.ui.icons.arrowLeft"
-						color="neutral"
-						variant="ghost"
-						@click="navigateTo('/')"
-					/>
+					<UButton :icon="appConfig.ui.icons.arrowLeft" to="/" color="neutral" variant="ghost" />
 				</UTooltip>
 				<UDropdownMenu :items="dropdownItems">
-					<UTooltip :text="$t('header.openAppMenu')">
+					<UTooltip :text="$t('header.open-app-menu')">
 						<UButton :icon="appConfig.ui.icons.menu" color="neutral" variant="ghost" />
 					</UTooltip>
 				</UDropdownMenu>

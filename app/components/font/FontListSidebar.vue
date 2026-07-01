@@ -67,18 +67,18 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 					</UTooltip>
 				</div>
 				<UInput
-				v-model="state.search"
-				:icon="appConfig.ui.icons.search"
-				:placeholder="$t('font.search')"
-			/>
-			<div class="flex min-w-full gap-2">
-				<UTabs
-					v-model="state.layout"
-					:items="previewLayout"
-					color="neutral"
-					size="sm"
-					:content="false"
+					v-model="state.search"
+					:icon="appConfig.ui.icons.search"
+					:placeholder="$t('font.search')"
 				/>
+				<div class="flex min-w-full gap-2">
+					<UTabs
+						v-model="state.layout"
+						:items="previewLayout"
+						color="neutral"
+						size="sm"
+						:content="false"
+					/>
 					<UButton
 						:icon="appConfig.ui.icons.plus"
 						:label="$t('font.add')"
@@ -93,11 +93,11 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 			<div class="flex flex-col gap-2">
 				<UFormField :label="$t('font.preview')">
 					<UTextarea
-					v-model="state.previewText"
-					:placeholder="$t('font.previewPlaceholder')"
-					:rows="2"
-					autoresize
-				/>
+						v-model="state.previewText"
+						:placeholder="$t('font.preview-placeholder')"
+						:rows="2"
+						autoresize
+					/>
 					<template #hint>
 						<UTooltip :text="$t('font.reset')">
 							<UButton

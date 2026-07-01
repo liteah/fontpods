@@ -1,7 +1,10 @@
 {
+	"common": {
+		"search-placeholder": "搜尋…"
+	},
 	"header": {
 		"back": "返回",
-		"openAppMenu": "開啟應用選單"
+		"open-app-menu": "開啟應用程式選單"
 	},
 	"font": {
 		"count": "{count} / {total} 個字型",
@@ -10,7 +13,7 @@
 		"search": "搜尋字型…",
 		"add": "添加",
 		"preview": "預覽",
-		"previewPlaceholder": "敏捷的棕色狐狸躍過那隻懶狗。",
+		"preview-placeholder": "敏捷的棕色狐狸躍過那隻懶狗。",
 		"fontSize": "字級",
 		"filter": "篩選",
 		"layout": {
@@ -43,6 +46,25 @@
 		}
 	},
 	"settings": {
-		"label": "設定"
+		"label": "設定",
+		"general": {
+			"label": "一般",
+			"language": "顯示語言",
+			"search-languages": "搜尋語言…"
+		},
+		"appearance": {
+			"label": "外觀",
+			"color-mode": {
+				"label": "主題色",
+				"light": "淺色",
+				"dark": "深色",
+				"system": "跟隨系統"
+			}
+		}
+	},
+	"languages": {
+		"english": "英文",
+		"simplified-chinese": "簡體中文",
+		"traditional-chinese": "繁體中文"
 	}
 }
