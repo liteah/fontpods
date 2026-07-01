@@ -1,14 +1,25 @@
 import type { AvailableLocales } from '~~/i18n/locales'
 
 export const useSettingsStore = defineStore('settings', () => {
-	const nuxtApp = useNuxtApp()
-	const i18n = nuxtApp.$i18n
+	const { $i18n } = useNuxtApp()
 
-	const locale = computed(() => i18n.locale.value as AvailableLocales)
+	const state = reactive({
+		locale: $i18n.locale.value as AvailableLocales,
+	})
 
-	function setLocale(newLocale: AvailableLocales) {
-		i18n.setLocale(newLocale)
-	}
+	watch(
+		() => $i18n.locale.value,
+		(v) => {
+			state.locale = v as AvailableLocales
+		},
+	)
 
-	return { locale, setLocale }
+	watch(
+		() => state.locale,
+		(v) => {
+			if (v !== $i18n.locale.value) $i18n.setLocale(v)
+		},
+	)
+
+	return { state }
 })

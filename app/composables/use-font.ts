@@ -16,8 +16,8 @@ export function useFont() {
 	const error = computed(() => fontStore.error)
 
 	const filteredFonts = computed(() => {
-		const source = fontListStore.filterSource
-		const search = fontListStore.search.trim().toLowerCase()
+		const source = fontListStore.state.filterSource
+		const search = fontListStore.state.search.trim().toLowerCase()
 
 		return fontStore.regularFonts.filter((f) => {
 			if (source === 'local' && f.source !== 'local') return false

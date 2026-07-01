@@ -7,21 +7,7 @@ const fontStore = useFontStore()
 const fontListStore = useFontListStore()
 const { filteredFonts, loadFonts, loading } = useFont()
 
-const { search, previewText, fontSize } = storeToRefs(fontListStore)
-
-const layout = computed({
-	get: () => fontListStore.layout,
-	set: (v: string | number) => {
-		fontListStore.layout = v as FontLayout
-	},
-})
-
-const filterSource = computed({
-	get: () => fontListStore.filterSource,
-	set: (v: string | number) => {
-		fontListStore.filterSource = v as FontFilterSource
-	},
-})
+const { state } = storeToRefs(fontListStore)
 
 const previewLayout = computed<TabsItem[]>(() => [
 	{
@@ -81,18 +67,18 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 					</UTooltip>
 				</div>
 				<UInput
-					v-model="search"
-					:icon="appConfig.ui.icons.search"
-					:placeholder="$t('font.search')"
+				v-model="state.search"
+				:icon="appConfig.ui.icons.search"
+				:placeholder="$t('font.search')"
+			/>
+			<div class="flex min-w-full gap-2">
+				<UTabs
+					v-model="state.layout"
+					:items="previewLayout"
+					color="neutral"
+					size="sm"
+					:content="false"
 				/>
-				<div class="flex min-w-full gap-2">
-					<UTabs
-						v-model="layout"
-						:items="previewLayout"
-						color="neutral"
-						size="sm"
-						:content="false"
-					/>
 					<UButton
 						:icon="appConfig.ui.icons.plus"
 						:label="$t('font.add')"
@@ -107,11 +93,11 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 			<div class="flex flex-col gap-2">
 				<UFormField :label="$t('font.preview')">
 					<UTextarea
-						v-model="previewText"
-						:placeholder="$t('font.previewPlaceholder')"
-						:rows="2"
-						autoresize
-					/>
+					v-model="state.previewText"
+					:placeholder="$t('font.previewPlaceholder')"
+					:rows="2"
+					autoresize
+				/>
 					<template #hint>
 						<UTooltip :text="$t('font.reset')">
 							<UButton
@@ -125,13 +111,13 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 					</template>
 				</UFormField>
 				<UFormField :label="$t('font.fontSize')" orientation="horizontal">
-					<FontSizeInput v-model="fontSize" class="max-w-26" />
+					<FontSizeInput v-model="state.fontSize" class="max-w-26" />
 				</UFormField>
 			</div>
 			<USeparator />
 			<UFormField :label="$t('font.filter')">
 				<UTabs
-					v-model="filterSource"
+					v-model="state.filterSource"
 					:items="filterSourceItems"
 					color="neutral"
 					size="sm"

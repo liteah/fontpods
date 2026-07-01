@@ -4,36 +4,29 @@ const defaultFontSize = 24
 export const useFontListStore = defineStore(
 	'fontList',
 	() => {
-		const search = ref('')
-		const previewText = ref(defaultPreviewText)
-		const fontSize = ref(defaultFontSize)
-		const layout = ref<FontLayout>('grid')
-		const filterSource = ref<FontFilterSource>('all')
+		const state = reactive({
+			search: '',
+			previewText: defaultPreviewText,
+			fontSize: defaultFontSize,
+			layout: 'grid' as FontLayout,
+			filterSource: 'all' as FontFilterSource,
+		})
 
 		function resetPreview() {
-			previewText.value = defaultPreviewText
-			fontSize.value = defaultFontSize
+			state.previewText = defaultPreviewText
+			state.fontSize = defaultFontSize
 		}
 
 		function resetFontSize() {
-			fontSize.value = defaultFontSize
+			state.fontSize = defaultFontSize
 		}
 
 		function resetFilter() {
-			filterSource.value = 'all'
-			search.value = ''
+			state.filterSource = 'all'
+			state.search = ''
 		}
 
-		return {
-			search,
-			previewText,
-			fontSize,
-			layout,
-			filterSource,
-			resetPreview,
-			resetFontSize,
-			resetFilter,
-		}
+		return { state, resetPreview, resetFontSize, resetFilter }
 	},
 	{
 		persist: true,
