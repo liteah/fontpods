@@ -19,7 +19,7 @@
 		"@tauri-apps/api": "^2.11.1",
 		"@tauri-apps/plugin-opener": "^2.5.4",
 		"@tauri-store/pinia": "^4.2.1",
-		"nuxt": "^4.4.8",
+		"nuxt": "^4.5.1",
 		"pinia": "^3.0.4",
 		"pinia-plugin-persistedstate": "^4.7.1",
 		"tailwindcss": "^4.3.1",
